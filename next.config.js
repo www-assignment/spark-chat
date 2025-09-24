@@ -1,15 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable Turbopack for build to avoid issues
-  experimental: {
-    turbo: undefined
-  },
-  // Reduce build time by excluding unnecessary optimizations
+  output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true
   },
-  // Enable standalone output for faster builds
-  output: 'standalone'
+  basePath: process.env.NODE_ENV === 'production' ? '/sparkchat-platform' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/sparkchat-platform/' : '',
 }
 
 module.exports = nextConfig

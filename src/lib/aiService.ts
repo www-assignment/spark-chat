@@ -1,14 +1,14 @@
 // Mock AI service - In production, this would connect to real AI APIs
 class AIService {
-  private async simulateAPICall(delay: number = 1000) {
+  private async simulateAPICall(delay: number = 1000): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay))
   }
 
-  async generateContentIdeas(topic: string, platform: string) {
+  async generateContentIdeas(topic: string, platform: string): Promise<string[]> {
     await this.simulateAPICall(1500)
     
     // Mock AI responses - in real app, these would come from OpenAI/Claude
-    const ideasMap: any = {
+    const ideasMap: Record<string, string[]> = {
       instagram: [
         `"Behind the scenes: Creating ${topic}" carousel`,
         `Interactive poll about ${topic} trends`,
@@ -33,7 +33,7 @@ class AIService {
     ]
   }
 
-  async analyzePerformance(data: any) {
+  async analyzePerformance(): Promise<{insight: string, recommendation: string, confidence: number}> {
     await this.simulateAPICall(2000)
     
     // Mock AI analysis
@@ -44,16 +44,16 @@ class AIService {
     }
   }
 
-  async generateCaption(contentIdea: string, platform: string) {
+  async generateCaption(contentIdea: string, platform: string): Promise<string> {
     await this.simulateAPICall(1000)
     
-    const hashtags = {
+    const hashtags: Record<string, string> = {
       instagram: "#socialmedia #digitalmarketing #growth #contentstrategy",
       youtube: "#YouTubeTips #ContentCreation #DigitalMarketing #Tutorial",
       tiktok: "#SocialMediaTips #ContentCreator #Viral #Trending"
     }
 
-    return `🚀 ${contentIdea}\n\nThis strategy has been working incredibly well for creators in your niche! 💫\n\n${hashtags[platform as keyof typeof hashtags] || '#socialmedia #marketing'}`
+    return `🚀 ${contentIdea}\n\nThis strategy has been working incredibly well for creators in your niche! 💫\n\n${hashtags[platform] || '#socialmedia #marketing'}`
   }
 }
 

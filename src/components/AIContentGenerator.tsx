@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { aiService } from '../lib/aiService'
+import { aiService } from '@/lib/aiService'
 
 export default function AIContentGenerator() {
   const [topic, setTopic] = useState('')
@@ -44,7 +44,7 @@ export default function AIContentGenerator() {
       {/* Input Section */}
       <div className="space-y-4 mb-6">
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">What's your content topic?</label>
+          <label className="block text-sm font-medium text-slate-700 mb-2">What&apos;s your content topic?</label>
           <input
             type="text"
             value={topic}

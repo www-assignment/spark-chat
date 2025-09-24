@@ -34,10 +34,10 @@ export default function Home() {
           Your Social Media
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"> AI Co-Pilot</span>
         </h1>
-        <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
-          SparkChat doesn't just automate—it learns, adapts, and grows with you. 
-          Meet your digital twin that handles the work while you focus on what matters.
-        </p>
+       <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+  SparkChat doesn&apos;t just automate—it learns, adapts, and grows with you. 
+  Meet your digital twin that handles the work while you focus on what matters.
+</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 
             onClick={() => router.push('/dashboard')} // FIXED: Using router
