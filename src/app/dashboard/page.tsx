@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import DigitalTwinPreview from '@/components/DigitalTwinPreview'
 import PlatformConnector from '@/components/PlatformConnector'
-import AIContentGenerator from '@/components/AIContentGenerator' // ADD THIS IMPORT
+import AIContentGenerator from '@/components/AIContentGenerator'
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview')

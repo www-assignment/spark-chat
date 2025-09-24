@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { aiService } from '@/lib/aiService'
+import { aiService } from '../lib/aiService'
 
 export default function AIContentGenerator() {
   const [topic, setTopic] = useState('')

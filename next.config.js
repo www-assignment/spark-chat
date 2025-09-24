@@ -1,18 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable Turbopack for build to avoid issues
   experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
+    turbo: undefined
   },
+  // Reduce build time by excluding unnecessary optimizations
   images: {
-    domains: ['images.unsplash.com', 'via.placeholder.com'],
+    unoptimized: true
   },
+  // Enable standalone output for faster builds
+  output: 'standalone'
 }
 
 module.exports = nextConfig
